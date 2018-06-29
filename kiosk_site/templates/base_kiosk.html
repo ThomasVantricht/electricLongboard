@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Electric longboard</title>
+    <meta name="description" content="TFT start screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {# refresh the pages every 30 seconds #}
+    <meta http-equiv="refresh" content="30">
+    {# css #}
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/normalize.css") }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/screen.css") }}">
+  </head>
+  <body>
+    <div class="c-kiosk-page">
+        {% block content %}
+
+        {% endblock %}
+
+         {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+                {% for category, message in messages %}
+                    <div class="c-alert c-alert--{{ category }}">
+                        <p class="u-mb-clear">{{ message }}</p>
+                    </div>
+                {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                autohideAlert();
+              });
+            function autohideAlert() {
+                let alerts = document.querySelectorAll(".c-alert");
+                window.setTimeout(function() {
+                 for (let i = 0; i < alerts.length; i++) {
+                     alerts[i].classList.add('u-slide-up');
+                 }
+                }, 120000);
+            }
+        </script>
+
+    </div>
+  </body>
+</html>

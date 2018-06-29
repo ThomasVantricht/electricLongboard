@@ -1,0 +1,14 @@
+[Unit]
+Description=Longboards gps sensor service
+After=network.target
+BindsTo=mysqld.service
+After=mysqld.service
+
+[Service]
+User=longboard
+Group=longboard
+WorkingDirectory=/home/longboard/longboard/electric_longboard_pi/sensor
+ExecStart=/home/longboard/longboard/env/bin/python /home/longboard/longboard/electric_longboard_pi/sensor/sensor_db.py
+
+[Install]
+WantedBy=multi-user.target

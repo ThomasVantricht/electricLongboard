@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% set active_page = "longboard" %}
+
+{% block title %} Home {{ super() }} {% endblock %}
+{% block description %} This page displays your last route (on a map) and total distance, time {% endblock %}
+
+{% block header %} Longboard {% endblock %}
+{% block main %}
+   <div class="o-layout o-layout--justify-center o-layout--align-content-space-around">
+        <div class="o-layout__item">
+          <div class="o-container o-container--md">
+            <div class="o-section o-section--md">
+              <section class="c-map">
+                <div class="c-map__location"></div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="o-layout__item">
+          <div class="o-container o-container--md">
+            <div class="o-section o-section--md">
+              <div class="o-layout o-layout--align-center o-layout--justify-space-between">
+                <h2 class="c-lead c-lead--lg">Lights</h2>
+                <button class="o-button-reset c-switch js-toggle-switch">
+                    <a href="/longboard/toggle_lights">
+                        <svg class="c-switch__svg {{ lights }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 24">
+                            <path class="c-switch__background" d="M36,0H12a12,12,0,0,0,0,24H36A12,12,0,0,0,36,0Z"/>
+                            <circle class="c-switch__circle" cx="12" cy="12" r="10.77"/>
+                        </svg>
+                    </a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="o-layout__item">
+          <div class="o-container o-container--md">
+            <div class="o-section o-section--md">
+              <form class="o-layout o-layout--align-center o-layout--justify-space-evenly" action="" method="post">
+                <button class="o-button-reset c-session-button c-session-button--{{ running }} u-mb-md" type="submit" name="btnSession"  value="Session">
+                  <svg class="c-session-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+                      <defs>
+                        <style>
+                          .stroke{
+                            fill: none;
+                            stroke: #FFF;
+                            stroke-miterlimit: 10;
+                            stroke-width: 3px;
+                          }
+                        </style>
+                      </defs>
+                      <title>longboard</title>
+                        <g class="slide-in">
+                          <path class="stroke" d="M110.67,52.65a5.8,5.8,0,0,0-2.62-.58h-1.46c-.2,0-.41,0-.61,0-1.62.14-9.77.6-12.72-4.14a10.43,10.43,0,0,0-9-4.89h-46a10.43,10.43,0,0,0-9,4.89c-3,4.74-11.1,4.28-12.72,4.14a6.08,6.08,0,0,0-.61,0H14.47a5.8,5.8,0,0,0-2.62.58,4.58,4.58,0,0,0-2.59,4.42,4.59,4.59,0,0,0,2.59,4.42,5.8,5.8,0,0,0,2.62.58h1.46a6.08,6.08,0,0,0,.61,0c1.62-.14,9.77-.6,12.72,4.13a10.42,10.42,0,0,0,9,4.9h46a10.42,10.42,0,0,0,9-4.9C96.21,61.44,104.36,61.9,106,62c.2,0,.41,0,.61,0h1.46a5.8,5.8,0,0,0,2.62-.58,4.59,4.59,0,0,0,2.59-4.42A4.58,4.58,0,0,0,110.67,52.65Z"/>
+                          <path class="stroke" d="M99.9,44.62h8.72a2.52,2.52,0,0,0,2.62-2.4V39a2.51,2.51,0,0,0-2.62-2.4H99.9A2.51,2.51,0,0,0,97.28,39v3.2A2.52,2.52,0,0,0,99.9,44.62Z"/>
+                          <!-- <polygon class="stroke" points="104.3 45.62 104.3 44.62 104.3 50.72 104.3 45.62"/> -->
+                          <path class="stroke" d="M108.62,69.52H99.9a2.52,2.52,0,0,0-2.62,2.4v3.2a2.51,2.51,0,0,0,2.62,2.4h8.72a2.51,2.51,0,0,0,2.62-2.4v-3.2A2.52,2.52,0,0,0,108.62,69.52Z"/>
+                          <!-- <polygon class="stroke" points="104.3 63.42 104.3 69.52 104.3 68.52 104.3 63.42"/> -->
+                          <path class="stroke" d="M13.9,44.62h8.72a2.52,2.52,0,0,0,2.62-2.4V39a2.51,2.51,0,0,0-2.62-2.4H13.9A2.51,2.51,0,0,0,11.28,39v3.2A2.52,2.52,0,0,0,13.9,44.62Z"/>
+                          <!-- <polygon class="stroke" points="18.3 45.62 18.3 44.62 18.3 50.72 18.3 45.62"/> -->
+                          <path class="stroke" d="M22.62,69.52H13.9a2.52,2.52,0,0,0-2.62,2.4v3.2a2.51,2.51,0,0,0,2.62,2.4h8.72a2.51,2.51,0,0,0,2.62-2.4v-3.2A2.52,2.52,0,0,0,22.62,69.52Z"/>
+                          <!-- <polygon class="stroke" points="18.3 63.42 18.3 69.52 18.3 68.52 18.3 63.42"/> -->
+                        </g>
+                    </svg>
+                    {% if running == 'on' %}
+                        Stop session
+                    {% else %}
+                        Start session
+                    {% endif %}
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript">
+        let toggleTrigger = document.querySelectorAll(".js-toggle-switch");
+        for (let i = 0; i < toggleTrigger.length; i++) {
+          toggleTrigger[i].addEventListener("click", function() {
+            document.querySelector(".c-switch__svg").classList.toggle("on");
+          })
+        }
+
+        function locMap() {
+          let curLoc = {lat: {{ lat }}, lng: {{ lng }} };
+
+          let options = {
+              zoom: 18,
+              center: curLoc,
+              mapTypeId: google.maps.MapTypeId.ROADMAP,
+              disableDefaultUI: true
+          };
+          let map = new google.maps.Map(document.querySelector(".c-map__location"), options);
+
+          let marker = new google.maps.Marker({
+            position: curLoc,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: "{{ url_for("static", filename="img/png/marker_v3.png") }}",
+            title: 'Longboard {{ username }}',
+          });
+
+          let infowindow = new google.maps.InfoWindow({
+            content: "{{ window_content }}"
+          });
+
+          marker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAsMGNyyiideCBJgnOXQeCZ_CbGaejdxg&callback=locMap"></script>
+
+{% endblock %}

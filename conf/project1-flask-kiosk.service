@@ -1,0 +1,14 @@
+[Unit]
+Description=uWSGI instance to serve project1 web interface
+After=network.target
+BindsTo=mysqld.service
+After=mysqld.service
+
+[Service]
+User=longboard
+Group=longboard
+WorkingDirectory=/home/longboard/longboard/kiosk_site/
+ExecStart=/home/longboard/longboard/env/bin/python -u kiosk_site.py
+
+[Install]
+WantedBy=multi-user.target

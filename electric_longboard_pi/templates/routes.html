@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% set active_page = "routes" %}
+
+{% block title %} Details routes {{ super() }} {% endblock %}
+{% block description %} This page displays all your routes in a table {% endblock %}
+
+{% block header %} Details routes {% endblock %}
+{% block main %}
+    <div class="o-container">
+        <div class="o-section o-section--md">
+            {{ macro.responsive_data_grid(header_list, datalist_of_list) }}
+        </div>
+      </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+{% endblock %}

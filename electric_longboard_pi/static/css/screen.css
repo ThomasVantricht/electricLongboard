@@ -1,0 +1,1980 @@
+/*------------------------------------*\
+  #FONTS
+\*------------------------------------*/
+
+/* mukta-mahee-300 - latin */
+@font-face {
+  font-family: 'Mukta Mahee';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Mukta Mahee Light'), local('MuktaMahee-Light'),
+       url('../fonts/mukta-mahee-v2-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/mukta-mahee-v2-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* mukta-mahee-regular - latin */
+@font-face {
+  font-family: 'Mukta Mahee';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Mukta Mahee Regular'), local('MuktaMahee-Regular'),
+       url('../fonts/mukta-mahee-v2-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/mukta-mahee-v2-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* mukta-mahee-500 - latin */
+@font-face {
+  font-family: 'Mukta Mahee';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Mukta Mahee Medium'), local('MuktaMahee-Medium'),
+       url('../fonts/mukta-mahee-v2-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/mukta-mahee-v2-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* mukta-mahee-600 - latin */
+@font-face {
+  font-family: 'Mukta Mahee';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Mukta Mahee SemiBold'), local('MuktaMahee-SemiBold'),
+       url('../fonts/mukta-mahee-v2-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/mukta-mahee-v2-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* mukta-mahee-700 - latin */
+@font-face {
+  font-family: 'Mukta Mahee';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Mukta Mahee Bold'), local('MuktaMahee-Bold'),
+       url('../fonts/mukta-mahee-v2-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/mukta-mahee-v2-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* mukta-mahee-800 - latin */
+@font-face {
+  font-family: 'Mukta Mahee';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Mukta Mahee ExtraBold'), local('MuktaMahee-ExtraBold'),
+       url('../fonts/mukta-mahee-v2-latin-800.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/mukta-mahee-v2-latin-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+/* Generic: Page --- Global page styles + universal box-sizing: */
+
+html {
+  box-sizing              : border-box;
+  height                  : 100%;
+  color                   : #000;
+  overflow-x              : hidden;
+  background-color        : #ECEFF1;
+  font-family             : "Mukta Mahee", Helvetica, arial, sans-serif;
+  font-size               : 16px;
+  font-weight             : 400;
+  -webkit-font-smoothing  : antialiased;
+  -moz-osx-font-smoothing : grayscale;
+  line-height             : 1.5;
+}
+
+body {
+  height : 100%;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing : inherit;
+}
+
+*:focus {
+  outline-color: orange;
+}
+
+/**
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  color       : #FFF;
+  background  : #46b6ac;
+  text-shadow : none;
+}
+
+::selection {
+  color       : #FFF;
+  background  : #46b6ac;
+  text-shadow : none;
+}
+
+/*------------------------------------*\
+  #Elements
+\*------------------------------------*/
+
+/* Elements: Images --- Default markup for images to make them responsive */
+
+img {
+  max-width      : 100%;
+  vertical-align : top;
+}
+
+/* Elements: typography --- Default markup for typographic elements */
+
+h1,
+h2,
+h3 {
+  font-weight : 500;
+}
+
+h1 {
+  margin      : 0;
+  font-size   : 36px;
+  line-height : 48px;
+}
+
+h2 {
+  margin      : 0;
+  font-size   : 32px;
+  line-height : 40px;
+}
+
+h3 {
+  margin      : 0;
+  font-size   : 26px;
+  line-height : 32px;
+}
+
+h4,
+h5,
+h6 {
+  margin      : 0;
+  font-size   : 20px;
+  line-height : 24px;
+}
+
+address,
+dl,
+figure,
+ol,
+p,
+table,
+ul {
+  margin : 0 0 24px;
+}
+
+ol,
+ul {
+  padding-left : 24px;
+}
+
+li ol,
+li ul {
+  margin-bottom : 0;
+}
+
+blockquote {
+  margin      : 0 0 24px;
+  font-size   : 23px;
+  font-style  : normal;
+  line-height : 32px;
+}
+
+blockquote * {
+  font-size   : inherit;
+  line-height : inherit;
+}
+
+figcaption {
+  margin-top  : 8px;
+  font-size   : 12px;
+  font-weight : 400;
+  line-height : 16px;
+}
+
+hr {
+  height     : 1px;
+  margin     : 0 0 24px;
+  border     : 0;
+  background : LightGrey;
+}
+
+a {
+  color      : #000;
+  transition : all .1s ease-in-out;
+}
+
+a:active,
+a:visited {
+  color : #ECEFF1;
+}
+
+a:focus,
+a:hover {
+  color : #ECEFF1;
+}
+
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
+
+/**
+ * Objects: Row --- Creates a horizontal row that stretches the viewport and
+ * adds padding around children
+ */
+
+.o-row {
+  position : relative;
+  padding  : 16px 16px 0;
+}
+
+/* color modifiers */
+
+.o-row--primary-x-light {
+  background-color : #F2FAFF;
+}
+
+.o-row--neutral-xx-dark {
+  color      : #fff;
+  background : #20223A;
+}
+
+/* size modifiers */
+
+.o-row--lg {
+  padding-top    : 48px;
+  padding-bottom : 24px;
+}
+
+.o-row--xl {
+  padding-top    : 72px;
+  padding-bottom : 48px;
+}
+
+@media
+  (min-width : 768px) {
+  .o-row {
+    padding-right : 48px;
+    padding-left  : 48px;
+  }
+
+  .o-row--md {
+    padding-top    : 48px;
+    padding-bottom : 24px;
+  }
+
+  .o-row--lg {
+    padding-top    : 72px;
+    padding-bottom : 48px;
+  }
+}
+
+@media
+  (min-width : 992px) {
+  .o-row--intro {
+    padding-top    : 0;
+    padding-bottom : 0;
+  }
+
+  .o-row--xl {
+    padding-top    : 96px;
+    padding-bottom : 72px;
+  }
+}
+
+/**
+ * Objects: Container --- Creates a horizontal container that sets the global
+ * max-width
+ */
+
+o-container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 79.5em; /* 79.5 * 16px = 1272 */
+}
+@media (min-width: 992px) {
+  .o-container--md {
+    max-width    : 672px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+/**
+ * Objects: section --- Creates vertical whitespace between adjacent sections
+ */
+
+.o-section {
+  position : relative;
+}
+
+.o-section--md,
+.o-section--lg,
+.o-section--xl {
+  padding-top : 32px;
+}
+
+@media
+  (min-width : 768px) {
+  .o-section--lg,
+  .o-section--xl {
+    padding-top : 48px;
+  }
+}
+
+@media
+  (min-width : 992px) {
+   .o-section--xl {
+    padding-top : 72px;
+  }
+}
+
+/**
+ * Objects: Layout --- The layout object provides us with a column-style layout
+ * system. This object contains the basic structural elements, but classes
+ * should be complemented with width utilities
+ */
+
+.o-layout {
+  display   : -webkit-flex;
+  display   : -ms-flexbox;
+  display   : flex;
+  flex-wrap : wrap;
+}
+
+.o-layout__item {
+  width : 100%;
+}
+
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+  margin : 0 -16px;
+}
+
+.o-layout--gutter > .o-layout__item {
+  padding : 0 16px;
+}
+
+.o-layout--gutter-sm {
+  margin : 0 -6px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+  padding : 0 6px;
+}
+
+.o-layout--gutter-lg {
+  margin : 0 -24px;
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+  padding : 0 24px;
+}
+
+.o-layout--gutter-xl {
+  margin : 0 -48px;
+}
+
+.o-layout--gutter-xl > .o-layout__item {
+  padding : 0 48px;
+}
+
+/* reverse horizontal row modifier */
+
+.o-layout--row-reverse {
+  flex-direction : row-reverse;
+}
+
+/* Horizontal alignment modifiers */
+
+.o-layout--justify-start {
+  justify-content : flex-start;
+}
+
+.o-layout--justify-end {
+  justify-content : flex-end;
+}
+
+.o-layout--justify-center {
+  justify-content : center;
+}
+
+.o-layout--justify-space-around {
+  justify-content : space-around;
+}
+
+.o-layout--justify-space-evenly {
+  justify-content : space-evenly;
+}
+
+.o-layout--justify-space-between {
+  justify-content : space-between;
+}
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-start {
+  align-items : flex-start;
+}
+
+.o-layout--align-end {
+  align-items : flex-end;
+}
+
+.o-layout--align-center {
+  align-items : center;
+}
+
+.o-layout--align-baseline {
+  align-items : baseline;
+}
+
+/**
+ * Vertical alignment modifiers that only work if there is more than one flex
+ * item
+ */
+
+.o-layout--align-content-start {
+  align-content : start;
+}
+
+.o-layout--align-content-end {
+  align-content : end;
+}
+
+.o-layout--align-content-center {
+  align-content : center;
+}
+
+.o-layout--align-content-space-around {
+  align-content : space-around;
+}
+
+.o-layout--align-content-space-between {
+  align-content : space-between;
+}
+
+.o-layout--align-content-space-evenly {
+  align-content : space-evenly;
+}
+
+/**
+ * Objects: List --- Small reusable object to remove default list styling from
+ * lists
+ */
+
+.o-list {
+  padding    : 0;
+  list-style : none;
+}
+
+/* Object: Button reset --- Small button reset object */
+
+.o-button-reset {
+  -webkit-appearance      : none;
+  width                   : auto;
+  margin                  : 0;
+  padding                 : 0;
+  color                   : inherit;
+  overflow                : visible;
+  border                  : none;
+  background              : transparent;
+  font                    : inherit;
+  -webkit-font-smoothing  : inherit;
+  -moz-osx-font-smoothing : inherit;
+  line-height             : normal;
+  cursor: pointer;
+  /* inherit font & color from ancestor */
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  /* Corrects font smoothing for webkit */
+  /* Corrects inability to style clickable `input` types in iOS */
+}
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+/* Component: page --- website content */
+
+.c-page {
+  position           : relative;
+  min-height         : 100%;
+  -ms-transform      : translateX(0);
+  -webkit-transform  : translateX(0);
+  transform          : translateX(0);
+  -webkit-transition : -webkit-transform .5s ease;
+  transition         : transform .5s ease;
+}
+
+.has-nav .c-page {
+  -ms-transform     : translateX(calc(100vw - 56px));
+  -webkit-transform : translateX(calc(100vw - 56px));
+  transform         : translateX(calc(100vw - 56px));
+}
+
+@media
+  (min-width : 768px) {
+  .has-nav .c-page {
+    -ms-transform     : translateX(calc(100vw - 96px));
+    -webkit-transform : translateX(calc(100vw - 96px));
+    transform         : translateX(calc(100vw - 96px));
+  }
+}
+
+@media
+  (min-width : 1200px) {
+  .c-page {
+    width             : calc(100vw - 320px);
+    -ms-transform     : translateX(320px);
+    -webkit-transform : translateX(320px);
+    transform         : translateX(320px);
+  }
+}
+
+/* Component: header --- Main header of the website */
+
+.c-header {
+  display          : -webkit-flex;
+  display          : -ms-flexbox;
+  display          : flex;
+  height           : 56px;
+  margin           : 0 -16px 0;
+  padding          : 0 16px;
+  color            : #FFF;
+  background-color : #478C86;
+  align-items      : center;
+  justify-content  : flex-start;
+}
+
+.c-header--big {
+  height: 96px;
+}
+
+.c-header__icon {
+  margin-right : 32px;
+}
+
+.c-header__title {
+  margin : 0;
+}
+
+.c-header__logout {
+  display          : -webkit-flex;
+  display          : -ms-flexbox;
+  display          : flex;
+  align-items      : center;
+  justify-content  : center;
+  position: absolute;
+  right: 16px;
+}
+
+.c-header__logout--svg {
+  height           : 100%;
+  width            : 24px;
+  fill: #FFF;
+}
+
+@media
+  (min-width : 768px) {
+  .c-header {
+    height  : 80px;
+    margin  : 0 -48px 0;
+    padding : 0 32px;
+  }
+
+  .c-header--big {
+    height: 112px;
+  }
+
+  .c-header__logout {
+    right            : 32px;
+  }
+
+  .c-header__logout--svg {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+@media
+  (min-width : 1200px) {
+  .c-header {
+    display        : none;
+    pointer-events : none;
+  }
+  .c-header--big {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    pointer-events: all;
+  }
+}
+
+/* Component: Nav trigger --- Navigation trigger mobile devices */
+
+.c-nav-trigger {
+  display         : -webkit-flex;
+  display         : -ms-flexbox;
+  display         : flex;
+  width           : 24px;
+  height          : 24px;
+  align-items     : center;
+  justify-content : center;
+}
+
+.c-nav-trigger__svg {
+  height : 100%;
+  width : 100%;
+  fill   : #FFF;
+}
+
+.c-nav-trigger__svg--path {
+  -webkit-transition : d .5s;
+  transition         : d .5s;
+}
+
+.has-nav .c-nav-trigger__svg--path {
+  d: path("M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z")
+}
+
+@media
+  (min-width : 768px) {
+  .c-nav-trigger {
+    width  : 32px;
+    height : 32px;
+  }
+}
+
+/* Component: Nav --- Main navigation of the site */
+
+.c-nav {
+  font-size   : 24px;
+  line-height : 36px;
+}
+
+.c-nav__row {
+  display     : -webkit-flex;
+  display     : -ms-flexbox;
+  display     : flex;
+  width       : 100%;
+  align-items : center;
+}
+
+.c-nav__link {
+  display         : block;
+  padding         : 6px 0;
+  text-decoration : none;
+  font-weight     : 500;
+}
+
+.c-nav__icon {
+  margin-right : 32px;
+  fill         : #ECEFF1;
+}
+
+.c-nav__link,
+.c-nav__link:active,
+.c-nav__link:visited {
+  color : #ECEFF1;
+}
+
+.c-nav__link:focus,
+.c-nav__link:hover,
+.c-nav__link--active {
+  text-decoration : underline;
+}
+
+/* Component: side nav --- Dedicated side nav component */
+
+.c-side-nav {
+  position           : fixed;
+  top                : 0;
+  left               : 0;
+  width              : calc(100vw - 56px);
+  height             : 100vh;
+  padding            : 0 16px;
+  overflow-y         : auto;
+  background-color   : #333;
+  -ms-transform      : translateX(-100%);
+  -webkit-transform  : translateX(-100%);
+  transform          : translateX(-100%);
+  -webkit-transition : -webkit-transform .5s ease;
+  transition         : transform .5s ease;
+}
+
+.c-side-nav__header {
+  margin-top    : 152px;
+  margin-bottom : 16px;
+  color         : #ECEFF1;
+  align-items   : center;
+  font-weight   : 500;
+}
+
+.has-nav .c-side-nav {
+  -ms-transform     : translateX(0);
+  -webkit-transform : translateX(0);
+  transform         : translateX(0);
+}
+
+@media
+  (min-width : 768px) {
+  .c-side-nav {
+    width   : calc(100vw - 96px);
+    padding : 0 48px;
+  }
+}
+
+@media
+  (min-width : 1200px) {
+  .c-side-nav {
+    width             : calc(320px);
+    -ms-transform     : translateX(0);
+    -webkit-transform : translateX(0);
+    transform         : translateX(0);
+  }
+}
+
+/**
+ * Component: Lead --- Lead type treatments to style everything that differs
+ * from standard typography elements
+ */
+
+.c-lead {
+  position : relative;
+}
+
+.c-lead--md {
+  font-size   : 18px;
+  line-height : 28px;
+}
+
+.c-lead--lg {
+  font-size   : 24px;
+  line-height : 36px;
+}
+
+.c-lead--xl {
+  font-size   : 32px;
+  line-height : 48px;
+}
+
+@media
+  (min-width : 768px) {
+  .c-lead--lg {
+    font-size   : 32px;
+    line-height : 1.5;
+  }
+}
+
+/* Component: CTA link --- Small cta link with custom animation */
+.c-link-cta {
+  text-decoration : underline;
+  text-align: center;
+  font-size       : 16px;
+  font-weight     : 400;
+  line-height     : 24px;
+}
+
+.c-link-cta,
+.c-link-cta:active,
+.c-link-cta:visited {
+  color : #000;
+}
+
+.c-link-cta:focus,
+.c-link-cta:hover {
+  color      : #fff;
+}
+
+.c-link-cta:active {
+  color      : #fff;
+}
+
+.c-link-cta--lg {
+  padding   : 16px 32px;
+  font-size : 16px;
+}
+
+/* Component: card --- dark card */
+
+.c-cards {
+  margin : 0 -16px;
+  align-content: space-evenly;
+  height : -moz-calc(100vh - 56px);
+  height : -webkit-calc(100vh - 56px);
+  height : -o-calc(100vh - 56px);
+  height : calc(100vh - 56px);
+}
+
+@media
+  screen and (orientation: landscape) {
+  .c-cards {
+    height : 500px;
+  }
+}
+
+.c-card {
+  margin: 0 16px;
+  padding          : 8px;
+  /*color            : #4D4545;*/
+  color            : rgba(77, 69, 69, 0.9);
+  border-radius    : 5px;
+  background-color : #FFF;
+  box-shadow       : 0 4px 8px 0 rgba(0,0,0,0.16);
+  text-align       : center;
+  font-weight      : 700;
+}
+
+@-moz-document url-prefix() {
+  .c-card {
+    margin: 10px 16px;
+  }
+}
+
+.c-card__title {
+  margin      : 0 0 8px;
+  font-size   : 16px;
+  line-height : 28px;
+}
+
+.c-card__middle {
+  margin      : 0;
+  font-weight : 700;
+  font-size   : 38px;
+  line-height : 54px;
+  color: rgba(77, 69, 69, 1);
+}
+
+.c-card__bottom {
+  margin      : 8px 0 0;
+  font-size   : 18px;
+  line-height : 28px;
+}
+
+.c-card__icon {
+  width          : 42px;
+  height         : 42px;
+  fill           : #4D4545;
+  vertical-align : middle;
+}
+
+@media
+  (min-width : 378px) {
+  .c-card {
+    padding : 16px;
+  }
+
+  .c-card__title {
+    font-size : 18px;
+  }
+}
+
+@media
+  (min-width : 768px) {
+  .c-card__title {
+    margin-bottom : 16px;
+    font-size     : 32px;
+    line-height   : 48px;
+  }
+  .c-card__bottom {
+    margin-top  : 16px;
+    font-size   : 32px;
+    line-height : 48px;
+  }
+  .c-card__middle {
+    font-size   : 52px;
+    line-height : 78px;
+  }
+  .c-card__icon {
+    width  : 52px;
+    height : 52px;
+  }
+  .c-cards {
+    height : -moz-calc(100vh - 80px);
+    height : -webkit-calc(100vh - 80px);
+    height : -o-calc(100vh - 80px);
+    height : calc(100vh - 80px);
+  }
+}
+
+@media
+  (min-width : 1200px) {
+  .c-cards {
+    align-items: center;
+    height : 100%;
+  }
+  .c-card__title {
+    font-size   : 22px;
+    line-height : 33px;
+  }
+  .c-card__bottom {
+    font-size   : 22px;
+    line-height : 33px;
+  }
+  .c-card__middle {
+    font-size   : 40px;
+    line-height : 60px;
+  }
+  .c-cards, .c-card {
+    margin : 0;
+  }
+}
+
+
+/* Component: map --- google maps */
+
+.c-map {
+  width            : 100%;
+  border-radius    : 8px;
+  background-color : white;
+  box-shadow       : 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.c-map__route {
+  display       : none;
+  height        : 27em;
+  border-radius : 8px;
+}
+
+.c-map__detail-route {
+  margin-top    : -24px;
+  height        : 270px;
+  border-radius : 8px;
+}
+
+.c-map__location {
+  border-radius : 8px;
+  min-height    : 250px;
+}
+
+@media
+  (min-width : 1200px) {
+  .c-map__route {
+    display : block;
+  }
+  .c-map__location {
+    min-height    : 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .c-map__detail-route {
+    height        : 380px;
+  }
+}
+/* Component: table --- responsive table to display route data */
+
+.c-table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* table-layout: fixed; */
+}
+
+.c-table__row {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 5px 0;
+}
+.c-table__column {
+  position: relative;
+  padding: 12px;
+  text-align: center;
+  min-height: 47px;
+}
+.c-table__header {
+  padding: 12px 0;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.c-table__link {
+  color: #000 !important;
+}
+
+@media (max-width: 576px) {
+  .c-table {
+    border: 0;
+  }
+  .c-table__caption {
+    font-size: 1.3em;
+  }
+  .c-table__head {
+    border: none;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+  }
+  .c-table__row {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .c-table__column {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 14px;
+    line-height: 23px;
+    text-align: right;
+  }
+  .c-table__column:before {
+    /* Display the data-labels */
+    content: attr(data-label);
+    float: left;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .c-table__column:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* Component: input --- input datalist */
+
+.c-input {
+  text-align: left;
+  font-size: 16px;
+  padding: 12px 16px;
+  width: 100%;
+  margin: 8px 0 12px;
+  background-color: #FFF;
+  color: #4D4545;
+  /*box-shadow: inset -0.5px -0.5px 6px rgba(0,0,0,0.16);*/
+  border: none;
+}
+
+.c-input:focus {
+  outline-color: #47b6ac;
+}
+
+.c-input--on {
+  visibility: hidden;
+}
+
+/* Component: switch --- simple on-of switch svg*/
+
+.c-switch {
+  display         : -webkit-flex;
+  display         : -ms-flexbox;
+  display         : flex;
+  width           : 48px;
+  height          : 24px;
+  align-items     : center;
+  justify-content : center;
+
+  -webkit-transition : all 3s ease;
+  transition         : all 3s ease;
+}
+
+.c-switch__svg {
+  height: 100%;
+  width: 100%;
+}
+
+.c-switch__background {
+  fill:#bcbec0;
+}
+
+.c-switch__circle {
+  fill:#fff;
+  -ms-transform      : translateX(0);
+  -webkit-transform  : translateX(0);
+  transform          : translateX(0);
+  -webkit-transition : all 0.53s ease;
+  transition         : all 0.53s ease;
+}
+
+.on .c-switch__background {
+  fill: #47b6ac;
+}
+
+.on .c-switch__circle {
+  -ms-transform      : translateX(50%);
+  -webkit-transform  : translateX(50%);
+  transform          : translateX(50%);
+}
+
+/* Component: session button --- big button to start and stop the session */
+
+.c-session-button {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 24px;
+  line-height: 36px;
+  padding: 10px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin-top: 30px;
+  color: #FFF;
+}
+
+.c-session-button--off {
+  background-color: #46B6AC;
+}
+
+.c-session-button--on {
+  background-color: red;
+}
+
+.c-session-button__icon {
+  width: 80px;
+  height: 80px;
+  fill: #FFF;
+  margin-right: 16px;
+}
+
+/* Component: kiosk page ---center layout */
+
+.c-kiosk-page {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c-kiosk-page__button {
+  height: 40%;
+  width: 100%;
+  margin: 0;
+}
+
+.c-kiosk-page__list {
+  max-height: 90%;
+  width: 80%;
+  margin: 0;
+}
+
+.c-kiosk-page__form {
+  width: 80%;
+  margin: auto;
+}
+
+.c-kiosk-page__row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  margin: 10px;
+  border-bottom: 1px solid #EDEDED;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: #46B6AC;
+}
+
+.c-kiosk-page__link {
+  text-decoration: none;
+}
+
+.c-kiosk-page__item {
+  margin: 0;
+  color: white;
+  font-size: 24px;
+}
+
+.c-kiosk-page__icon {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.c-kiosk-page__icon--svg {
+  width: 100%;
+  height: 100%;
+  fill: #FFF;
+}
+
+/* Component: box --- white card with shadow */
+
+.c-box {
+  max-width: 600px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-content: space-evenly;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  background-color: #FFF;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.c-box--account {
+  width: 90vw;
+  padding: 12px 16px;
+}
+
+.c-box--login {
+  width: 100%;
+  margin: 0 auto;
+  padding: 12px 16px;
+}
+
+.c-box__head {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-start; */
+  font-size: 24px;
+  line-height: 36px;
+  border-bottom: 1px solid #CCC2C2;
+  padding-bottom: 10px;
+  min-width: 100%;
+}
+
+.c-box__icon {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  border: 1px solid #47b6ac;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.c-box__icon--svg {
+  fill: #47b6ac;
+}
+
+.c-box__title {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.c-box__content {
+  margin: auto;
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Component: Form --- Form with icons next to input */
+
+.c-form {
+  margin-top: 16px;
+}
+
+.c-form__icon {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin: 0 16px 0 0;
+}
+
+.c-form__icon--svg {
+  width: 100%;
+  height: 100%;
+  fill: #478C86;
+}
+
+.c-form__row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.c-form__row--lg {
+  margin-bottom: 32px;
+}
+
+.c-form__row:nth-last-child(2) {
+  margin-bottom: 16px;
+}
+
+.c-form__input {
+  width: 100%;
+  font-size: 14px;
+  line-height: 21px;
+  color: #000;
+  border: none;
+  padding: 3px 9px;
+  border-bottom: 1px solid #46B6AC;
+}
+
+.c-form__input::placeholder {
+  color: #CCC2C2;
+  opacity: 1; /* Firefox */
+}
+.c-form__input:-ms-input-placeholder {
+  color: #CCC2C2;
+}
+.c-form__input::-ms-input-placeholder  {
+  color: #CCC2C2;
+}
+
+.c-from__forgot-password {
+  text-transform: uppercase;
+  color: #46B6AC;
+  font-size: 14px;
+  margin: -16px 0 16px;
+  text-align: right;
+}
+
+.c-form__submit-button {
+  width: 100%;
+  text-align: center;
+  border: none;
+  background: transparent;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 20px;
+  line-height: 30px;
+  color: #46B6AC;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .c-form__input {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+.c-form-filter {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #DDD;
+}
+
+.c-form-filter__input {
+  margin: 0;
+  border: none;
+}
+
+.c-form-filter__button {
+  background: #46B6AC;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  width: 42px;
+  /*border: 1px solid #DDD;*/
+  border: none;
+}
+
+.c-form-filter__svg {
+  fill: #FFF;
+}
+
+/* login card */
+.c-login {
+  height: 100%;
+  width: 100vw;
+  margin: 0 -16px;
+}
+
+.c-login__image {
+  display         : -webkit-flex;
+  display         : -ms-flexbox;
+  display         : flex;
+  height: 200px;
+  width: 200px;
+  background-color: #46B6AC;
+  border-radius: 2px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  align-items     : center;
+  justify-content : center;
+  margin: 16px auto;
+}
+
+.c-login__title {
+  margin-left: 8px;
+  color: #478C86;
+  font-size: 22px;
+  line-height: 33px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.c-login__svg {
+  height: 90%;
+  width: 90%;
+}
+
+@media
+  (min-width : 768px) {
+  .c-login{
+    margin: 0 -48px;
+  }
+
+  .c-login__image {
+    height: 350px;
+    width: 400px;
+  }
+}
+
+.c-alert {
+  position: absolute;
+  border-radius: 5px;
+  top: 5px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 100;
+  width: 90vw;
+  max-width: 500px;
+  padding: 15px 20px;
+}
+
+.c-alert--error {
+  color: #A94442;
+  border: 1px solid #A94442;
+  background-color: #ffdede;
+}
+
+.c-alert--success {
+  color: #3c763d;
+  border: 1px solid #3c763d;
+  background-color: #dff0d8;
+}
+
+.c-copyright {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+
+/* Utilities: color --- Utility classes to put specific colors onto elements */
+
+
+.u-color-neutral-base {
+  color : #46B6AC;
+}
+
+.u-background-color-neutral-base {
+  background-color: #46B6AC;
+}
+
+.u-color-neutral-dark {
+  color : #121234;
+}
+
+/**
+ * Utilities: spacing --- Utility classes to put specific margins and paddings
+ * onto elements
+ */
+
+.u-pt-clear {
+  padding-top : 0 !important;
+}
+
+.u-mb-clear {
+  margin-bottom : 0 !important;
+}
+
+.u-mb-xs {
+  margin-bottom : 4px !important;
+}
+
+.u-mb-sm {
+  margin-bottom : 8px !important;
+}
+
+.u-mb-md {
+  margin-bottom : 16px !important;
+}
+
+.u-mb-lg {
+  margin-bottom : 32px !important;
+}
+
+.u-mb-xl {
+  margin-bottom : 48px !important;
+}
+
+/**
+ * Utilities: max-width --- Utility classes to put specific max widths onto
+ * elements
+ */
+
+.u-max-width-xs {
+  max-width : 18em !important;
+}
+
+.u-max-width-sm {
+  max-width : 39em !important;
+}
+
+.u-max-width-md {
+  max-width : 50em !important;
+}
+
+.u-max-width-lg {
+  max-width : 63.5em !important;
+}
+
+.u-max-width-none {
+  max-width : none !important;
+}
+
+/**
+ * Utility: Widths --- Utility classes to put specific widths onto elements Will
+ * be mostly used on o-layout__item
+ */
+
+.u-width-auto {
+  width : auto !important;
+}
+
+.u-1-of-2 {
+  width : 50% !important;
+}
+
+.u-1-of-3 {
+  width : 33.3333333333% !important;
+}
+
+.u-2-of-3 {
+  width : 66.6666666667% !important;
+}
+
+.u-1-of-4 {
+  width : 25% !important;
+}
+
+.u-3-of-4 {
+  width : 75% !important;
+}
+
+.u-1-of-5 {
+  width : 20% !important;
+}
+
+.u-2-of-5 {
+  width : 40% !important;
+}
+
+.u-3-of-5 {
+  width : 60% !important;
+}
+
+.u-4-of-5 {
+  width : 80% !important;
+}
+
+.u-1-of-6 {
+  width : 16.6666666667% !important;
+}
+
+.u-5-of-6 {
+  width : 83.3333333333% !important;
+}
+
+@media
+  (min-width : 576px) {
+  .u-1-of-2-bp1 {
+    width : 50% !important;
+  }
+
+  .u-1-of-3-bp1 {
+    width : 33.3333333333% !important;
+  }
+
+  .u-2-of-3-bp1 {
+    width : 66.6666666667% !important;
+  }
+
+  .u-1-of-4-bp1 {
+    width : 25% !important;
+  }
+
+  .u-3-of-4-bp1 {
+    width : 75% !important;
+  }
+
+  .u-1-of-5-bp1 {
+    width : 20% !important;
+  }
+
+  .u-2-of-5-bp1 {
+    width : 40% !important;
+  }
+
+  .u-3-of-5-bp1 {
+    width : 60% !important;
+  }
+
+  .u-4-of-5-bp1 {
+    width : 80% !important;
+  }
+
+  .u-1-of-6-bp1 {
+    width : 16.6666666667% !important;
+  }
+
+  .u-5-of-6-bp1 {
+    width : 83.3333333333% !important;
+  }
+}
+
+@media
+  (min-width : 768px) {
+  .u-1-of-2-bp2 {
+    width : 50% !important;
+  }
+
+  .u-1-of-3-bp2 {
+    width : 33.3333333333% !important;
+  }
+
+  .u-2-of-3-bp2 {
+    width : 66.6666666667% !important;
+  }
+
+  .u-1-of-4-bp2 {
+    width : 25% !important;
+  }
+
+  .u-3-of-4-bp2 {
+    width : 75% !important;
+  }
+
+  .u-1-of-5-bp2 {
+    width : 20% !important;
+  }
+
+  .u-2-of-5-bp2 {
+    width : 40% !important;
+  }
+
+  .u-3-of-5-bp2 {
+    width : 60% !important;
+  }
+
+  .u-4-of-5-bp2 {
+    width : 80% !important;
+  }
+
+  .u-1-of-6-bp2 {
+    width : 16.6666666667% !important;
+  }
+
+  .u-5-of-6-bp2 {
+    width : 83.3333333333% !important;
+  }
+}
+
+@media
+  (min-width : 992px) {
+  .u-1-of-2-bp3 {
+    width : 50% !important;
+  }
+
+  .u-1-of-3-bp3 {
+    width : 33.3333333333% !important;
+  }
+
+  .u-2-of-3-bp3 {
+    width : 66.6666666667% !important;
+  }
+
+  .u-1-of-4-bp3 {
+    width : 25% !important;
+  }
+
+  .u-3-of-4-bp3 {
+    width : 75% !important;
+  }
+
+  .u-1-of-5-bp3 {
+    width : 20% !important;
+  }
+
+  .u-2-of-5-bp3 {
+    width : 40% !important;
+  }
+
+  .u-3-of-5-bp3 {
+    width : 60% !important;
+  }
+
+  .u-4-of-5-bp3 {
+    width : 80% !important;
+  }
+
+  .u-1-of-6-bp3 {
+    width : 16.6666666667% !important;
+  }
+
+  .u-5-of-6-bp3 {
+    width : 83.3333333333% !important;
+  }
+}
+
+@media
+  (min-width : 1200px) {
+  .u-1-of-2-bp4 {
+    width : 50% !important;
+  }
+
+  .u-1-of-3-bp4 {
+    width : 33.3333333333% !important;
+  }
+
+  .u-2-of-3-bp4 {
+    width : 66.6666666667% !important;
+  }
+
+  .u-1-of-4-bp4 {
+    width : 25% !important;
+  }
+
+  .u-3-of-4-bp4 {
+    width : 75% !important;
+  }
+
+  .u-1-of-5-bp4 {
+    width : 20% !important;
+  }
+
+  .u-2-of-5-bp4 {
+    width : 40% !important;
+  }
+
+  .u-3-of-5-bp4 {
+    width : 60% !important;
+  }
+
+  .u-4-of-5-bp4 {
+    width : 80% !important;
+  }
+
+  .u-1-of-6-bp4 {
+    width : 16.6666666667% !important;
+  }
+
+  .u-5-of-6-bp4 {
+    width : 83.3333333333% !important;
+  }
+}
+
+/* Utilities: height --- Utility classes to put specific heights onto elements */
+
+.u-max-height {
+  height : -moz-calc(100vh - 56px);
+  height : -webkit-calc(100vh - 56px);
+  height : calc(100vh - 56px);
+}
+
+@media
+  (min-width : 768px) {
+  .u-max-height {
+    height : -moz-calc(100vh - 80px);
+    height : -webkit-calc(100vh - 80px);
+    height : calc(100vh - 80px);
+  }
+}
+
+@media
+  screen and (orientation: landscape) {
+  .u-max-height {
+    height : 120vw;
+  }
+  .c-card {
+    margin: 10px 16px;
+  }
+}
+
+@media
+  screen
+  and (orientation : landscape)
+  and (min-width   : 1024px) {
+  .u-max-height {
+    height : -moz-calc(100vh - 80px);
+    height : -webkit-calc(100vh - 80px);
+    height : -o-calc(100vh - 80px);
+  }
+}
+
+
+@media
+  (min-width   : 1200px) {
+  .u-max-height {
+    height : 100vh;
+  }
+}
+
+@media (min-width   : 1200px) {
+  .u-hide-xxl{
+    display : none;
+  }
+}
+
+.u-sticky {
+  z-index: 10;
+  /* overflow: auto; */
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left:0;
+}
+
+.u-viewport-height {
+  height: 100%;
+}
+
+.u-full-height {
+  min-height : 100vh;
+}
+
+.u-m-clear {
+  margin : 0 -16px;
+}
+
+.u-text-align-center {
+  text-align: center;
+}
+
+.u-slide-up {
+  -ms-transform      : translateY(-200%);
+  -webkit-transform  : translateY(-200%);
+  transform          : translateY(-200%);
+  -webkit-transition : -webkit-transform 1s ease;
+  transition         : transform 1s ease;
+}
+
+/* @media screen and (min-width : 1200px) { .u-max-height { height: 100%; } } */
+
+
+/*------------------------------------*\
+  #MEDIA
+\*------------------------------------*/
+
+/**
+ * Media Queries --- EXAMPLE Media Queries for Responsive Design. These examples
+ * override the primary ('mobile first') styles. USE THEM INLINE!
+ */
+
+/**
+ * Extra small devices (portrait phones, less than 576px) No media query since
+ * this is the default in mobile first design
+ */
+
+/* Small devices (landscape phones, 576px and up) @media (min-width: 576px) {} */
+
+/* Medium devices (tablets, 768px and up) @media (min-width: 768px) {} */
+
+/**
+ * Large devices (landscape tablets, desktops, 992px and up) @media (min-width:
+ * 992px) {}
+ */
+
+/**
+ * Extra large devices (large desktops, 1200px and up) @media (min-width:
+ * 1200px) {}
+ */
+
+/**
+ * Print styles. --- Inlined to avoid the additional HTTP request:
+ * http://www.phpied.com/delay-loading-your-print-css/
+ */
+
+@media
+  print {
+  *,
+  *:after,
+  *:before {
+    color       : #000 !important;
+    background  : transparent !important;
+    box-shadow  : none !important;
+    text-shadow : none !important;
+    /* Black prints faster: http://www.sanbeiji.com/archives/953 */
+  }
+
+  a,
+  a:visited {
+    text-decoration : underline;
+  }
+
+  a[href]:after {
+    content : " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content : " (" attr(title) ")";
+  }
+  /**
+  * Don't show links that are fragment identifiers, or use the `javascript:`
+  * pseudo protocol
+  */
+
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content : "";
+  }
+
+  pre {
+    white-space : pre-wrap !important;
+  }
+
+  blockquote,
+  pre {
+    border            : 1px solid #999;
+    page-break-inside : avoid;
+  }
+  /* Printing Tables: http://css-discuss.incutio.com/wiki/Printing_Tables */
+
+  thead {
+    display : table-header-group;
+  }
+
+  img,
+  tr {
+    page-break-inside : avoid;
+  }
+
+  h2,
+  h3,
+  p {
+    widows  : 3;
+    orphans : 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after : avoid;
+  }
+}

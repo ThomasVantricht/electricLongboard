@@ -1,0 +1,49 @@
+{% macro card(classes, title, middle, bottom) %}
+    <div class="{{ classes }}">
+        <div class="c-card">
+          <p class="c-card__title">{{ title }}</p>
+          <p class="c-card__middle">{{ middle }}</p>
+          <p class="c-card__bottom">{{ bottom }}</p>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro card_link(classes, title, link_to, bottom) %}
+    <div class="{{ classes }}">
+        <div class="c-card">
+          <p class="c-card__title">{{ title }}</p>
+          <a class="c-card__middle" href="{{ link_to }}">
+            <svg class="c-card__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          </a>
+          <p class="c-card__bottom">{{ bottom }}</p>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro responsive_data_grid(header_list, datalist_of_list) %}
+    <table class="c-table">
+        <thead class="c-table__head">
+          <tr class="c-table__row">
+            {% for header in header_list %}
+                <th class="c-table__header" scope="col">{{ header }} </th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+            {% for list in datalist_of_list %}
+                <tr class="c-table__row">
+                    {% for item in list %}
+                         {% if loop.index0 == 0 %}
+                            <td class="c-table__column" data-label={{ header_list[loop.index0] }}><a class="c-table__link" href="details_route/{{ item }}">{{ item }}</a></td>
+                        {% else %}
+                            <td class="c-table__column" data-label={{ header_list[loop.index0] }}>{{ item }}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+{% endmacro %}

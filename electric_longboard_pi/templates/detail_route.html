@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block title %} Detail route {{ super() }} {% endblock %}
+{% block description %} This page displays a route (on a map) {% endblock %}
+
+{% block body %}
+    <header class="o-row u-pt-clear">
+      <div class="c-header c-header--big">
+        <div class="c-header__icon">
+            <button class="o-button-reset c-nav-trigger js-go-back">
+              <svg class="c-nav-trigger__svg c-nav-trigger__svg--big" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+              </svg>
+            </button>
+        </div>
+
+        <div class="c-header__title">
+          <h1 class="c-lead c-lead--lg">Go back</h1>
+        </div>
+      </div>
+    </header>
+
+    <main class="o-row u-pt-clear">
+        <div class="o-container o-container--md">
+            <section class="c-map u-mb-lg">
+              <div class="c-map__detail-route"></div>
+            </section>
+            <section class="u-m-clear o-layout o-layout--justify-space-evenly u-mb-lg">
+                {{ macro.card("o-layout__item u-1-of-2", "Trip distance", distance , "km") }}
+                {{ macro.card("o-layout__item u-1-of-2", "Trip time", time , "min") }}
+            </section>
+        </div>
+    </main>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        initGoBack();
+      });
+
+      function initGoBack() {
+        let backArrows = document.querySelectorAll(".js-go-back");
+        for (let i = 0; i < backArrows.length; i++) {
+            backArrows[i].addEventListener("click", function() {
+              window.history.back();
+          })
+        }
+      }
+    </script>
+
+    <script type="text/javascript">
+        function initMap() {
+          //  https://www.latlong.net/
+          let sessionCoordinates = {{ coordinates|tojson }};
+
+          let options = {
+            zoom: 15,
+            center: calcCenter(sessionCoordinates),
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true
+          };
+
+          let map = new google.maps.Map(document.querySelector(".c-map__detail-route"), options);
+
+          let sessionPath = new google.maps.Polyline({
+            path: sessionCoordinates,
+            geodesic: false,                                 /* shortest path */
+            strokeColor: '#00796B',                          /* #0031ca */
+            strokeOpacity: 0.5,
+            strokeWeight: 5
+          });
+          sessionPath.setMap(map);
+
+          let markerStart = new google.maps.Marker({
+            position: sessionCoordinates[0],
+            map: map,
+            animation: google.maps.Animation.DROP,
+            title: 'Start'
+          });
+          let markerEnd = new google.maps.Marker({
+            position: sessionCoordinates[sessionCoordinates.length-1],
+            map: map,
+            animation: google.maps.Animation.DROP,
+            title: 'End'
+          });
+        }
+
+        function calcCenter(listCoordinates) {
+          let listLat = [], listLng = [];
+          let center = {};
+          for (let index in listCoordinates) {
+            listLat.push(listCoordinates[index].lat);
+            listLng.push(listCoordinates[index].lng);
+          }
+          center.lat = (Math.min(...listLat) + Math.max(...listLat))/2;
+          center.lng = (Math.min(...listLng) + Math.max(...listLng))/2;
+          return center;
+        }
+      </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAsMGNyyiideCBJgnOXQeCZ_CbGaejdxg&callback=initMap"></script>
+{% endblock %}

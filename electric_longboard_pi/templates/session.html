@@ -1,0 +1,58 @@
+{% extends 'base_kiosk.html' %}
+
+{% block content %}
+    <form class="c-kiosk-page__form" action="" method="post">
+        <button class="o-button-reset c-session-button c-session-button--{{ running }} c-kiosk-page__button" type="submit" name="btnSession"  value="Session">
+        <svg class="c-session-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+            <defs>
+              <style>
+                .stroke{
+                  fill: none;
+                  stroke: #FFF;
+                  stroke-miterlimit: 10;
+                  stroke-width: 3px;
+                }
+                .slide-in {
+                  -webkit-transform: translateX(-200%);
+                  -ms-transform: translateX(-200%);
+                  transform: translateX(-200%);
+
+                  -webkit-animation: slide-in 0.7s forwards;
+                  -webkit-animation-delay: 1s;
+                  -webkit-animation-timing-function: ease-out;
+                  animation: slide-in 0.7s forwards;
+                  animation-timing-function: ease-out;
+                }
+                @-webkit-keyframes slide-in {
+                    to {
+                      -webkit-transform: translateX(0);
+                      -ms-transform: translateX(0);
+                      transform: translateX(0);
+                   }
+                }
+                @keyframes slide-in {
+                    to {
+                      -webkit-transform: translateX(0);
+                      -ms-transform: translateX(0);
+                      transform: translateX(0);
+                   }
+                }
+              </style>
+            </defs>
+            <title>longboard</title>
+              <g class="slide-in">
+                <path class="stroke" d="M110.67,52.65a5.8,5.8,0,0,0-2.62-.58h-1.46c-.2,0-.41,0-.61,0-1.62.14-9.77.6-12.72-4.14a10.43,10.43,0,0,0-9-4.89h-46a10.43,10.43,0,0,0-9,4.89c-3,4.74-11.1,4.28-12.72,4.14a6.08,6.08,0,0,0-.61,0H14.47a5.8,5.8,0,0,0-2.62.58,4.58,4.58,0,0,0-2.59,4.42,4.59,4.59,0,0,0,2.59,4.42,5.8,5.8,0,0,0,2.62.58h1.46a6.08,6.08,0,0,0,.61,0c1.62-.14,9.77-.6,12.72,4.13a10.42,10.42,0,0,0,9,4.9h46a10.42,10.42,0,0,0,9-4.9C96.21,61.44,104.36,61.9,106,62c.2,0,.41,0,.61,0h1.46a5.8,5.8,0,0,0,2.62-.58,4.59,4.59,0,0,0,2.59-4.42A4.58,4.58,0,0,0,110.67,52.65Z"/>
+                <path class="stroke" d="M99.9,44.62h8.72a2.52,2.52,0,0,0,2.62-2.4V39a2.51,2.51,0,0,0-2.62-2.4H99.9A2.51,2.51,0,0,0,97.28,39v3.2A2.52,2.52,0,0,0,99.9,44.62Z"/>
+                <path class="stroke" d="M108.62,69.52H99.9a2.52,2.52,0,0,0-2.62,2.4v3.2a2.51,2.51,0,0,0,2.62,2.4h8.72a2.51,2.51,0,0,0,2.62-2.4v-3.2A2.52,2.52,0,0,0,108.62,69.52Z"/>
+                <path class="stroke" d="M13.9,44.62h8.72a2.52,2.52,0,0,0,2.62-2.4V39a2.51,2.51,0,0,0-2.62-2.4H13.9A2.51,2.51,0,0,0,11.28,39v3.2A2.52,2.52,0,0,0,13.9,44.62Z"/>
+                <path class="stroke" d="M22.62,69.52H13.9a2.52,2.52,0,0,0-2.62,2.4v3.2a2.51,2.51,0,0,0,2.62,2.4h8.72a2.51,2.51,0,0,0,2.62-2.4v-3.2A2.52,2.52,0,0,0,22.62,69.52Z"/>
+              </g>
+            </svg>
+            {% if running == 'on' %}
+              Stop session
+            {% else %}
+              Quick start
+            {% endif %}
+        </button>
+    </form>
+{% endblock %}

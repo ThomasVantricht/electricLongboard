@@ -1,0 +1,19 @@
+{% extends 'base_kiosk.html' %}
+
+{% block content %}
+     <ul class="o-list c-kiosk-page__list">
+        {% for user in users %}
+            <li>
+                <a href="/kiosk_page/{{ user[0] }}" class="c-kiosk-page__row c-kiosk-page__link">
+                  <p class="c-kiosk-page__item">{{ user[1] }}</p>
+                  <p class="c-kiosk-page__item c-kiosk-page__icon">
+                    <svg class="c-kiosk-page__icon--svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                      <path d="M0 0h24v24H0z" fill="none"/>
+                    </svg>
+                  </p>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

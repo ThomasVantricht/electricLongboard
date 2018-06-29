@@ -1,0 +1,14 @@
+[Unit]
+Description=uWSGI instance to serve project1 web interface
+After=network.target
+BindsTo=mysqld.service
+After=mysqld.service
+
+[Service]
+User=longboard
+Group=www-data
+WorkingDirectory=/home/longboard/longboard/electric_longboard_pi
+ExecStart=/usr/bin/uwsgi --ini /home/longboard/longboard/conf/uwsgi-flask.ini
+
+[Install]
+WantedBy=multi-user.target

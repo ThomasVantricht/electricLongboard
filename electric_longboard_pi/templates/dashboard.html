@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% set active_page = "dashboard" %}
+
+{% block title %} Home {{ super() }} {% endblock %}
+{% block description %} This page displays your last route (on a map) and total distance, time {% endblock %}
+
+
+{% block header %} Dashboard {% endblock %}
+{% block main %}
+    <div class="o-layout o-layout--justify-space-evenly o-layout--align-content-space-evenly u-max-height">
+        <div class="o-layout__item">
+          <div class="o-container">
+            <section class="c-cards o-layout o-layout--justify-space-between">
+                {{ macro.card("o-layout__item u-1-of-2 u-1-of-3-bp3 u-1-of-6-bp4", "Last distance", distance , "km") }}
+                {{ macro.card("o-layout__item u-1-of-2 u-1-of-3-bp3 u-1-of-6-bp4", "Last time", time , "min") }}
+                {{ macro.card("o-layout__item u-1-of-2 u-1-of-3-bp3 u-1-of-6-bp4", "Average speed", speed, "km/h") }}
+                {{ macro.card_link("o-layout__item u-1-of-2 u-1-of-3-bp3 u-1-of-6-bp4 u-hide-xxl", "Route", "details_route/" + id|string , "maps") }}
+                {{ macro.card("o-layout__item u-1-of-2 u-1-of-3-bp3 u-1-of-6-bp4", "Total distance", total_distance, "km") }}
+                {{ macro.card("o-layout__item u-1-of-2 u-1-of-3-bp3 u-1-of-6-bp4", "Total time", total_time, "min") }}
+            </section>
+          </div>
+        </div>
+
+        <div class="o-layout__item">
+          <div class="o-container">
+            <section class="c-map">
+              <div class="c-map__route"></div>
+            </section>
+          </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript">
+        function initMap() {
+          //  https://www.latlong.net/
+          let sessionCoordinates = {{ coordinates|tojson }};
+
+          let options = {
+            zoom: 15,
+            center: calcCenter(sessionCoordinates),
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true
+          };
+
+          let map = new google.maps.Map(document.querySelector(".c-map__route"), options);
+
+          let sessionPath = new google.maps.Polyline({
+            path: sessionCoordinates,
+            geodesic: false,                                 /* shortest path */
+            strokeColor: '#00796B',                          /* #0031ca */
+            strokeOpacity: 0.5,
+            strokeWeight: 5
+          });
+          sessionPath.setMap(map);
+
+          var markerStart = new google.maps.Marker({
+            position: sessionCoordinates[0],
+            map: map,
+            animation: google.maps.Animation.DROP,
+            title: 'Start'
+          });
+          var markerEnd = new google.maps.Marker({
+            position: sessionCoordinates[sessionCoordinates.length-1],
+            map: map,
+            animation: google.maps.Animation.DROP,
+            title: 'End'
+          });
+        }
+
+        function calcCenter(listCoordinates) {
+          let listLat = [], listLng = [];
+          let center = {};
+          for (let index in listCoordinates) {
+            listLat.push(listCoordinates[index].lat);
+            listLng.push(listCoordinates[index].lng);
+          }
+          center.lat = (Math.min(...listLat) + Math.max(...listLat))/2;
+          center.lng = (Math.min(...listLng) + Math.max(...listLng))/2;
+          return center;
+        }
+      </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAsMGNyyiideCBJgnOXQeCZ_CbGaejdxg&callback=initMap"></script>
+{% endblock %}
